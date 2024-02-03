@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class FlagThreadStopExample2 {
 
 //    boolean running = true;
-    private AtomicBoolean running = new AtomicBoolean(true);
+    private AtomicBoolean running = new AtomicBoolean(true); //메인 메모리에서 작업한다.
 
     public static void main(String[] args) {
         new FlagThreadStopExample2().flagTest();
