@@ -15,7 +15,7 @@ public class Mutex {
 
     public synchronized void release() {
         this.lock = false;
-        this.notify();
+        this.notify();//깨어나다
     }
 
 }
