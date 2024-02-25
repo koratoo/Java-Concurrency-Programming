@@ -11,7 +11,7 @@ public class SharedData {
 
     public void sum() {
         try {
-            mutex.acquired();
+//            mutex.acquired(); //락을 처리하는 부분
             for (int i = 0; i < 10000000; i++) {
                 sharedValue ++;
             }
