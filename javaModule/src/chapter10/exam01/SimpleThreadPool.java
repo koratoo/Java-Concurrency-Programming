@@ -24,7 +24,7 @@ public class SimpleThreadPool {
     }
 
     public void submit(Runnable task) { //Queue에 작업을 추가
-        if(isShutdown) {
+        if(!isShutdown) {
             synchronized (taskQueue) {
                 taskQueue.offer(task);
                 taskQueue.notifyAll();
@@ -47,11 +47,10 @@ public class SimpleThreadPool {
         }
     }
 
-    private class WorkerThread extends Thread {
-
+    private class WorkerThread extends Thread
         @Override
         public void run() {
-            while(isShutdown) {
+            while(!isShutdown) {
                 Runnable task;
                 synchronized (taskQueue) {
                     while(taskQueue.isEmpty() && !isShutdown) {
