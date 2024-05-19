@@ -47,7 +47,7 @@ public class SimpleThreadPool {
         }
     }
 
-    private class WorkerThread extends Thread
+    private class WorkerThread extends Thread {
         @Override
         public void run() {
             while(!isShutdown) {
