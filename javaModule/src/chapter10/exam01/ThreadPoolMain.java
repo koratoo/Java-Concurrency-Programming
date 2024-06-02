@@ -7,7 +7,7 @@ public class ThreadPoolMain {
         for (int i = 0; i < 10; i++) {
             int taskId = i;
             simpleThreadPool.submit(() ->{
-                System.out.println("작업 " + taskId + "수행중...");
+                System.out.println( "작업 " + taskId + "수행중...");
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
